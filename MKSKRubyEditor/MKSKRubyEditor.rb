@@ -4,7 +4,7 @@ module MKSK
   class RubyEditor < UI::WebDialog
 
       def initialize
-        @rceVersion = "1.0"
+        @rceVersion = "0.1.1"
         @as_su_os = (Object::RUBY_PLATFORM =~ /mswin/i) ? 'windows' :
           ((Object::RUBY_PLATFORM =~ /darwin/i) ? 'mac' : 'other')
         @baseDir = File.dirname(__FILE__)
@@ -259,17 +259,17 @@ unless file_loaded?(file)
   pluginMenu = UI.menu('Plugins').add_submenu('SKGroup')
   pluginMenu.add_item('Ruby Editor') {MKSK::RubyEditor.new}
 
-   as_rce_tb = UI::Toolbar.new "SKGroup"
-   as_rce_cmd = UI::Command.new("Ruby Editor") { editordlg = MKSK::RubyEditor.new }
-   # One instance only version:
-   # as_rce_cmd = UI::Command.new("Ruby Code Editor") { editordlg = AS_RubyEditor::RubyEditor.new unless editordlg }
-#   as_rce_cmd.small_icon = "img/rce_1_16.png"
-#   as_rce_cmd.large_icon = "img/rce_1_24.png"
-   as_rce_cmd.tooltip = "Ruby Editor"
-   as_rce_cmd.status_bar_text = "Edit and run Ruby scripts in a nice-looking dialog"
-   as_rce_cmd.menu_text = "Ruby Editor"
-   as_rce_tb = as_rce_tb.add_item as_rce_cmd
-   as_rce_tb.show
+#   as_rce_tb = UI::Toolbar.new "SKGroup"
+#   as_rce_cmd = UI::Command.new("Ruby Editor") { editordlg = MKSK::RubyEditor.new }
+#   # One instance only version:
+#   # as_rce_cmd = UI::Command.new("Ruby Code Editor") { editordlg = AS_RubyEditor::RubyEditor.new unless editordlg }
+##   as_rce_cmd.small_icon = "img/rce_1_16.png"
+##   as_rce_cmd.large_icon = "img/rce_1_24.png"
+#   as_rce_cmd.tooltip = "Ruby Editor"
+#   as_rce_cmd.status_bar_text = "Edit and run Ruby scripts in a nice-looking dialog"
+#   as_rce_cmd.menu_text = "Ruby Editor"
+#   as_rce_tb = as_rce_tb.add_item as_rce_cmd
+#   as_rce_tb.show
 
   file_loaded file
 end
